@@ -1,0 +1,38 @@
+{
+	"fyresafer1":
+		{	
+			"deviceid": "9af8642a-65e1-4b9b-b255-515268ae38b5",
+			"data": [20,20,20,25,25,20,20,20,20,20,20,23,20,20,20,20,20,20,20,20],
+			"lat": "57",
+			"long": "11",
+			"name":"Sascha Paukner",
+			"contact":"0049015788050074",
+			"backup":"0049somenumber",
+			"neighbours":["number1", "number2", "number3"], 
+			"done":false
+		},
+	"fyresafer2":
+		{	
+			"deviceid": "id2",
+			"data": [20,20,20,25,25,20,20,20,20,20,20,23,20,20,20,20,20,20,20,20],
+			"lat": "57",
+			"long": "11",
+			"name":"Sascha Paukner",
+			"contact":"0049015788050074",
+			"backup":"0049somenumber",
+			"neighbours":["number1", "number2", "number3"], 
+			"done":false
+		},
+	"fyresafer3":
+		{	
+			"deviceid": "id3",
+			"data": [20,20,20,25,25,20,20,20,20,20,20,23,20,20,20,20,20,20,20,20],
+			"lat": "57",
+			"long": "11",
+			"name":"Sascha Paukner",
+			"contact":"0049015788050074",
+			"backup":"0049somenumber",
+			"neighbours":["number1", "number2", "number3"], 
+			"done":false
+		}
+}

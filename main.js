@@ -1,25 +1,65 @@
 var fs = require("fs");
 var obj;
+var station = 'data/firestation1.json';
+
+// must do it synchronous!!!!
 
 // Asynchronous read
-fs.readFile('input.txt', function (err, data) {
+fs.readFile(station, function (err, data) {
    	if (err) {
        return console.error(err);
    	}
    	//make data JSON
-   	obj = JSON.parse(data);
+   	stationdata = JSON.parse(data);
 
    	console.log("Asynchronous read: " + data);
+   	console.log('JSON OBJECT: ');
+   	// must be console.logges alone!!!
+   	console.log(obj);
 
-   	// structure to loop over JSON objects
-   	for (var key in obj) {
-   	  if (obj.hasOwnProperty(key)) {
-   	    var val = obj[key];
-   	    console.log(val);
+
+   	for (var key in stationdata) {
+   	  if (stationdata.hasOwnProperty(key)) {
+   	  	console.log(key);
+   	  	if(key === "fyresafer1") {
+	   	    var val = stationdata[key];
+	   	    console.log('before val');
+	   	    console.log(val);
+	   	    console.log('after val');
+	   	}
    	  }
    	}
 
+   	var test1 = getField(stationdata, 'fyresafer2', 'name');
+   	var test2 = getField(stationdata, 'fyresafer1', 'deviceid');
+   	console.log(test1);
+   	console.log(test2);
+
+
 });
+
+// get a field out of any firestation for any fyresafer
+function getField(station, fyresafer, fieldname) {
+	for (var key in station) {
+   	  if (station.hasOwnProperty(key)) {
+   	  	console.log(key);
+   	  	if(key === fyresafer) {
+	   	    var fyresafers = station[key];
+	   	    	console.log(fyresafers);
+	   	    for (var key in fyresafers) {
+	   	      	if (fyresafers.hasOwnProperty(key)) {
+	   	      		if(key === fieldname) {
+		   	      		var fieldValue = fyresafers[key];
+		   	    		console.log(fieldValue);
+	   	      		}
+	   	      	}
+
+	   	    }
+	   	}
+   	  }
+   	}
+   	return fieldValue;
+}
 
 console.log("Program Ended");
 
@@ -31,4 +71,6 @@ request('http://localhost:33000/test', function (error, response, body) {
     console.log(body) // Show the HTML for the Google homepage. 
   }
 });
+
+
 
