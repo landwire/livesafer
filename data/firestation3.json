@@ -1,0 +1,29 @@
+{
+	"0":
+		{
+			"id":"fyresafer1",
+			"person":"Sascha Paukner",
+			"contact":"0049015788050074",
+			"backup":"0049somenumber",
+			"neighbours":{"number1", "number2", "number3"}, 
+			"done":false
+		},
+	"1":
+		{
+			"id":"fyresafer1",
+			"person":"Sascha Paukner",
+			"contact":"0049015788050074",
+			"backup":"0049somenumber",
+			"neighbours":{"number1", "number2", "number3"}, 
+			"done":false
+		},
+	"2":
+		{
+			"id":"fyresafer1",
+			"person":"Sascha Paukner",
+			"contact":"0049015788050074",
+			"backup":"0049somenumber",
+			"neighbours":{"number1", "number2", "number3"}, 
+			"done":false
+		}
+}
