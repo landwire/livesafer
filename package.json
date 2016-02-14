@@ -21,6 +21,7 @@
   "homepage": "https://github.com/CiscoCloud/shipped-buildpack-template-express",
   "dependencies": {
     "express": "^4.12.4",
-    "jsonfile": "^2.2.3"
+    "jsonfile": "^2.2.3",
+    "superagent": "^1.7.2"
   }
 }
