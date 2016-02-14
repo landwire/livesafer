@@ -5,7 +5,7 @@ var obj;
 
 
 app.get('/', function (req, res) {
-	var response = 'Hello Fucker';
+	var response = 'Welcome to Lyfee Safer';
 	res.send(response);
 });
 
