@@ -5,7 +5,7 @@ var obj;
 
 
 app.get('/', function (req, res) {
-	var response = 'Welcome to Lyfee Safer - guarding over you and your loved ones.';
+	var response = 'Welcome to Lyfe Safer - guarding over you and your loved ones.';
 	res.send(response);
 });
 
