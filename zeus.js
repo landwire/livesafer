@@ -15,7 +15,7 @@ TOKEN = '991ac185'
  */
 exports.send = function (data) {
 	superagent
-		.post('http://api.ciscozeus.io:80/logs/+' TOKEN '+/photon/')
+		.post('http://api.ciscozeus.io:80/logs/' + TOKEN + '/photon/')
 		.send('logs=' + JSON.stringify([data]))
 		.end(function (err, res) {
 			if (err || !res.ok) {
