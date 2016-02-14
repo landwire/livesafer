@@ -1,4 +1,21 @@
 zeus = require('./zeus.js');
+request = require('superagent');
+
+request
+    .post('https://api.tropo.com/1.0/sessions')
+    .send("action=create")
+    .send("token=5a4168777877505150566d51764652554f6f6161494950624d72635a4456534159496d69454d4d487649534c")
+    .send("customerTelephone=openberlin3.gen@cisco.com")
+    .send("customerName=John+Dyer")
+    .send("neighbourTelephone=openberlin3.gen@cisco.com")
+    .send("neighbourName=Jane+Dyer")
+    	if (err || !res.ok) {
+    		console.log('TROPo error: ', err);
+    	} else {
+    		console.log('Call initiated:');
+   		}
+   	});
+
 
 var getMedianTemperature = function(data) {
 	var tot=data.length;
@@ -43,12 +60,13 @@ var getMedianTemperature = function(data) {
 	    console.log(msg);
 	    // the temperature
 	    console.log( msg.readings[0].value);
+
 	    console.log( msg.deviceId);
 
 	    // check for freak readings
 	    // get the average temperature
     	averageTemperature = getMedianTemperature(last_temperatures);
-    	if(msg.readings[0].value > (averageTemperature + 50) ) {
+    	if( (msg.readings[0].value > (averageTemperature + 50)) || (msg.readings[0].value < (averageTemperature - 50)) ) {
     		// it's a freak reading, do nothing!!!
     	} else {
     		// track last 10 readings = 30 minute;
@@ -64,19 +82,30 @@ var getMedianTemperature = function(data) {
     	// check for heat
     	if(averageTemperature > 50) {
     		console.log('HOT HOT HOT');
+    		request
+    		  .post('https://api.tropo.com/1.0/sessions?action=create')
+    		  .send("token=5a4168777877505150566d51764652554f6f6161494950624d72635a4456534159496d69454d4d487649534c")
+    		  .send("customerTelephone=14075551212")
+    		  .send("customerName=John+Dyer")
+    		  .send("neighbourTelephone=123132123123")
+    		  .send("neighbourName=Jane+Dyer")
+    		  .end(function(err, res){
+    		    // Calling the end function will send the request
+    		});
     	} else {
     		console.log('All COOL');
     	}
     	var test3 = {
     	"name": "Jackson Bonde",
 		"device": "9af8642a-65e1-4b9b-b255-515268ae38b5",
-		"temperature": msg.readings[0].value,
-		"coordinates": "52°28'52.9\"N 13°21'25.2\"E",
+		"temp2": parseInt(msg.readings[0].value),
+		"coordinates": "52.48202, 13.35713",
 		"address": "EUREF-Campus, 10829 Berlin",
 		"phone": "+4915775983808"
 		}
 	    //sendDataToZeus();
-	    zeus.send(test3)
+	    zeus.send(test3);
+	    //zeus.send(30);
 	});
 
 	relayr.on("connect", function () {
