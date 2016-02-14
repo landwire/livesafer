@@ -35,7 +35,7 @@ var getMedianTemperature = function(data) {
 	relayr.connect(token, dev_id);
 	//console.log('Connected');
 
-	var last_temperatures=[20,20,20,25,25,20,20,20,20,20];
+	var last_temperatures=[20,20,20,20,20,20];
 	var averageTemperature = 20;
 	var called = false;
 	relayr.on("data", function (topic, msg) {
@@ -92,10 +92,11 @@ var getMedianTemperature = function(data) {
     	} else {
     		console.log('All COOL');
     	}
+    	console.log(parseInt(averageTemperature));
     	var test3 = {
     	"name": "Jackson Bonde",
 		"device": "9af8642a-65e1-4b9b-b255-515268ae38b5",
-		"temp2": parseInt(msg.readings[0].value),
+		"temp2": parseInt(averageTemperature),
 		"geoip.location": "52.4805299,13.3543244",
 		"address": "EUREF-Campus, 10829 Berlin",
 		"phone": "+4915775983808"
