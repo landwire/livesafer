@@ -1,3 +1,33 @@
+var getMedianTemperature = function(data) {
+	var tot=data.length;
+	var median=0;
+	for (var i=0; i < tot; i++) {
+	  median = median + data[i];
+	}
+	median = median/tot;
+	return median;
+}
+
+var datas = [20,20,20,25,25,20,20,20,20,20,20,23];
+console.log(getMedianTemperature(datas));
+
+var alarm = false;
+var medianTemp;
+while (alarm === false) {
+    medianTemp=getMedianTemperature(datas);
+    datas.pop();
+    datas.unshift(60); // 90 is new temperature reading
+    console.log(medianTemp);
+    if(medianTemp > 50) {
+    	alarm=true;
+    }
+    // need to onstruct that in another way!!!
+    setTimeout(function() {
+    	console.log('Waiting 1 second...');
+    }, 1000);
+}
+
+
 // RELAYR.IO STUFF
 var Relayr = require('relayr');
 var app_id = "{ebe9f40a-f6df-4760-8c43-1c8a35fd50f8}";
@@ -25,6 +55,11 @@ relayr.on("connect", function () {
  console.log("Connected");
 });
 
+
+
+
+
+
 setTimeout(function() {
     process.exit();
-}, 1000);
+}, 5000);
