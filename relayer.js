@@ -91,6 +91,8 @@ var getMedianTemperature = function(data) {
 	    	}
     	} else {
     		console.log('All COOL');
+    		// make sure to reset the called variable to false for the next incident!!!
+    		called = false;
     	}
     	console.log(parseInt(averageTemperature));
     	var test3 = {
