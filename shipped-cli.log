@@ -8292,3 +8292,169 @@ TRACE 2016/02/14 04:47:26.833058 command.go:59: Executing command: vagrant reloa
 TRACE 2016/02/14 04:48:21.454041 config.go:139: Using config file /Volumes/Work/sites/livesafer/LiveSafer/livesafer/.shipped/shipped.ini
 TRACE 2016/02/14 04:48:21.454494 config.go:148: Also using project config file /Volumes/Work/sites/livesafer/LiveSafer/.shipped/shipped.ini
 TRACE 2016/02/14 04:48:21.454903 config.go:158: Also using home config file /Volumes/Home/sascha/.shipped/shipped.ini
+TRACE 2016/02/14 11:19:30.248692 config.go:100: .shipped directory already exists
+TRACE 2016/02/14 11:19:30.260862 config.go:109: Config file .shipped/shipped.ini already exists in /Volumes/Home/sascha
+TRACE 2016/02/14 11:19:30.261740 config.go:139: Using config file /Volumes/Home/sascha/.shipped/shipped.ini
+TRACE 2016/02/14 11:19:30.261869 main.go:172: CLI start directory is /Volumes/Work/sites/livesafer/LiveSafer/livesafer
+TRACE 2016/02/14 11:19:30.262366 config.go:139: Using config file /Volumes/Work/sites/livesafer/LiveSafer/livesafer/.shipped/shipped.ini
+TRACE 2016/02/14 11:19:30.263129 config.go:148: Also using project config file /Volumes/Work/sites/livesafer/LiveSafer/.shipped/shipped.ini
+TRACE 2016/02/14 11:19:30.263284 config.go:158: Also using home config file /Volumes/Home/sascha/.shipped/shipped.ini
+TRACE 2016/02/14 11:19:30.273786 utils.go:98: Console width is 176; help width is 120
+TRACE 2016/02/14 11:19:30.274008 main.go:137: Shipped-cli 1.0 b118 20160212 232232 starting with args struct { BootLogfile string; ConfigFile string; ConsoleMode bool; Debug bool; Expanded bool; FastBootstrap bool; Force bool; Full bool; Help bool; Json bool; Latest bool; LocalDocker bool; Logfile string; MockSDKClient bool; OutputFields string; RunAsRootOK bool; ShippedHome string; ShowVersion bool; Server string; Token string; VM string; VMisVagrant bool; VMisDockerCompose bool; ObjType string; Command string; Arguments []string }{BootLogfile:"", ConfigFile:"", ConsoleMode:false, Debug:false, Expanded:true, FastBootstrap:false, Force:false, Full:false, Help:false, Json:false, Latest:false, LocalDocker:false, Logfile:"/Volumes/Work/sites/livesafer/LiveSafer/livesafer/shipped-cli.log", MockSDKClient:false, OutputFields:"", RunAsRootOK:false, ShippedHome:"", ShowVersion:false, Server:"https://api.ciscoshipped.io", Token:"YSVIoCJteKobWJyOtlVycZdQhZIxjEpB", VM:"", VMisVagrant:true, VMisDockerCompose:false, ObjType:"local", Command:"reload", Arguments:[]string(nil)}
+TRACE 2016/02/14 11:19:30.274043 commands.go:92: Running command(local) subcommand(reload) args([]string(nil)) help(false)
+TRACE 2016/02/14 11:19:30.274071 commands.go:160: objDesc.Name = "Local"
+TRACE 2016/02/14 11:19:30.274163 uuidParser.go:196: ==> Using projectId ea07040b-d29a-11e5-ac4c-0242ac11119a
+TRACE 2016/02/14 11:19:30.274201 uuidParser.go:196: ==> Using serviceId 06eeb68c-d29b-11e5-ac4e-0242ac11119a
+TRACE 2016/02/14 11:19:30.274230 local.go:410: Starting LocalService.Reload()
+TRACE 2016/02/14 11:19:30.274304 projects.go:273: Directory  contains a .shipped directory
+TRACE 2016/02/14 11:19:30.274427 projects.go:273: Directory /Volumes/Work/sites/livesafer/LiveSafer contains a .shipped directory
+TRACE 2016/02/14 11:19:30.274545 client.go:114: GET https://api.ciscoshipped.io/projects/ea07040b-d29a-11e5-ac4c-0242ac11119a?api_token=YSVIoCJteKobWJyOtlVycZdQhZIxjEpB
+TRACE 2016/02/14 11:19:30.616147 client.go:159: Request status code 200 (200 OK)
+TRACE 2016/02/14 11:19:30.616586 config.go:139: Using config file /Volumes/Work/sites/livesafer/LiveSafer/.shipped/shipped.ini
+TRACE 2016/02/14 11:19:30.618111 config.go:158: Also using home config file /Volumes/Home/sascha/.shipped/shipped.ini
+TRACE 2016/02/14 11:19:30.618148 projects.go:304: Changed to project ea07040b-d29a-11e5-ac4c-0242ac11119a directory /Volumes/Work/sites/livesafer/LiveSafer
+TRACE 2016/02/14 11:19:30.618203 client.go:114: GET https://api.ciscoshipped.io/projects/ea07040b-d29a-11e5-ac4c-0242ac11119a/services/06eeb68c-d29b-11e5-ac4e-0242ac11119a?api_token=YSVIoCJteKobWJyOtlVycZdQhZIxjEpB
+TRACE 2016/02/14 11:19:30.754528 client.go:159: Request status code 200 (200 OK)
+TRACE 2016/02/14 11:19:30.755035 command.go:59: Executing command: vagrant reload livesafer
+2016/02/14 11:19:38.951110 local.go:604: ==> livesafer: Stopping container...
+2016/02/14 11:19:41.329400 local.go:604: ==> livesafer: Deleting the container...
+2016/02/14 11:19:41.923530 local.go:604: ==> livesafer: Syncing folders to the host VM...
+2016/02/14 11:19:43.100835 local.go:604:     dockerhost-ea07040b-d29a-11e5-ac4c-0242ac11119a: Mounting shared folders...
+2016/02/14 11:19:43.102012 local.go:604:     dockerhost-ea07040b-d29a-11e5-ac4c-0242ac11119a: /var/lib/docker/docker_1455445181_4952 => /Volumes/Work/sites/livesafer/LiveSafer/livesafer
+2016/02/14 11:19:45.173330 local.go:604:     dockerhost-ea07040b-d29a-11e5-ac4c-0242ac11119a: /var/lib/docker/docker_1455445181_82293 => /Volumes/Work/sites/livesafer/LiveSafer/.shipped
+2016/02/14 11:19:46.157503 local.go:604:     dockerhost-ea07040b-d29a-11e5-ac4c-0242ac11119a: /var/lib/docker/docker_build_7b00bf0a83ec3c70c01aaa9f7e58ebde => /Volumes/Work/sites/livesafer/LiveSafer/livesafer
+2016/02/14 11:19:47.289424 local.go:604: ==> livesafer: Building the container from a Dockerfile...
+2016/02/14 11:19:55.923992 local.go:604:     livesafer: Sending build context to Docker daemon 557.1 kB
+2016/02/14 11:19:56.104388 local.go:604:     livesafer: Sending build context to Docker daemon 1.114 MB
+2016/02/14 11:19:56.228188 local.go:604:     livesafer: Sending build context to Docker daemon 1.671 MB
+2016/02/14 11:19:56.238923 local.go:604:     livesafer: Sending build context to Docker daemon 2.228 MB
+2016/02/14 11:19:56.310274 local.go:604:     livesafer: Sending build context to Docker daemon 2.785 MB
+2016/02/14 11:19:56.359190 local.go:604:     livesafer: Sending build context to Docker daemon 3.342 MB
+2016/02/14 11:19:56.512783 local.go:604:     livesafer: Sending build context to Docker daemon 3.899 MB
+2016/02/14 11:19:56.953431 local.go:604:     livesafer: Sending build context to Docker daemon 4.456 MB
+2016/02/14 11:19:57.464949 local.go:604:     livesafer: Sending build context to Docker daemon 5.014 MB
+2016/02/14 11:19:57.974184 local.go:604:     livesafer: Sending build context to Docker daemon 5.571 MB
+2016/02/14 11:19:58.217654 local.go:604:     livesafer: Sending build context to Docker daemon 6.128 MB
+2016/02/14 11:20:00.132849 local.go:604:     livesafer: Sending build context to Docker daemon 6.685 MB
+2016/02/14 11:20:01.108111 local.go:604:     livesafer: Sending build context to Docker daemon 7.242 MB
+2016/02/14 11:20:01.162227 local.go:604:     livesafer: Sending build context to Docker daemon 7.799 MB
+2016/02/14 11:20:01.793847 local.go:604:     livesafer: Sending build context to Docker daemon 8.356 MB
+2016/02/14 11:20:01.997426 local.go:604:     livesafer: Sending build context to Docker daemon 8.913 MB
+2016/02/14 11:20:02.621113 local.go:604:     livesafer: Sending build context to Docker daemon  9.47 MB
+2016/02/14 11:20:03.052947 local.go:604:     livesafer: Sending build context to Docker daemon 10.03 MB
+2016/02/14 11:20:03.783569 local.go:604:     livesafer: Sending build context to Docker daemon 10.58 MB
+2016/02/14 11:20:04.073491 local.go:604:     livesafer: Sending build context to Docker daemon 11.14 MB
+2016/02/14 11:20:04.738306 local.go:604:     livesafer: Sending build context to Docker daemon  11.7 MB
+2016/02/14 11:20:05.396076 local.go:604:     livesafer: Sending build context to Docker daemon 12.26 MB
+2016/02/14 11:20:05.965680 local.go:604:     livesafer: Sending build context to Docker daemon 12.81 MB
+2016/02/14 11:20:06.154858 local.go:604:     livesafer: Sending build context to Docker daemon 13.37 MB
+2016/02/14 11:20:06.188525 local.go:604:     livesafer: Sending build context to Docker daemon 13.93 MB
+2016/02/14 11:20:06.260330 local.go:604:     livesafer: Sending build context to Docker daemon 14.48 MB
+2016/02/14 11:20:06.276585 local.go:604:     livesafer: Sending build context to Docker daemon 15.04 MB
+2016/02/14 11:20:06.331159 local.go:604:     livesafer: Sending build context to Docker daemon  15.6 MB
+2016/02/14 11:20:06.356171 local.go:604:     livesafer: Sending build context to Docker daemon 16.15 MB
+2016/02/14 11:20:06.403828 local.go:604:     livesafer: Sending build context to Docker daemon 16.71 MB
+2016/02/14 11:20:07.114330 local.go:604:     livesafer: Sending build context to Docker daemon 17.27 MB
+2016/02/14 11:20:07.602753 local.go:604:     livesafer: Sending build context to Docker daemon 17.83 MB
+2016/02/14 11:20:08.218768 local.go:604:     livesafer: Sending build context to Docker daemon 18.38 MB
+2016/02/14 11:20:08.700595 local.go:604:     livesafer: Sending build context to Docker daemon 18.94 MB
+2016/02/14 11:20:09.293646 local.go:604:     livesafer: Sending build context to Docker daemon  19.5 MB
+2016/02/14 11:20:09.884292 local.go:604:     livesafer: Sending build context to Docker daemon 20.05 MB
+2016/02/14 11:20:10.483216 local.go:604:     livesafer: Sending build context to Docker daemon 20.61 MB
+2016/02/14 11:20:11.030617 local.go:604:     livesafer: Sending build context to Docker daemon 21.17 MB
+2016/02/14 11:20:11.530217 local.go:604:     livesafer: Sending build context to Docker daemon 21.73 MB
+2016/02/14 11:20:12.038495 local.go:604:     livesafer: Sending build context to Docker daemon 22.28 MB
+2016/02/14 11:20:12.191098 local.go:604:     livesafer: Sending build context to Docker daemon 22.84 MB
+2016/02/14 11:20:12.207496 local.go:604:     livesafer: Sending build context to Docker daemon 23.14 MB
+2016/02/14 11:20:12.207541 local.go:604:     livesafer: Sending build context to Docker daemon 
+2016/02/14 11:20:12.220513 local.go:604:     livesafer: Step 0 : FROM node:5.0.0-slim
+2016/02/14 11:20:12.223545 local.go:604:     livesafer:  ---> 27571981a095
+2016/02/14 11:20:12.223590 local.go:604:     livesafer: Step 1 : EXPOSE 3000
+2016/02/14 11:20:12.245633 local.go:604:     livesafer:  ---> Using cache
+2016/02/14 11:20:12.245681 local.go:604:     livesafer:  ---> 2592234b3dd3
+2016/02/14 11:20:12.246101 local.go:604:     livesafer: Step 2 : WORKDIR /app
+2016/02/14 11:20:12.247139 local.go:604:     livesafer:  ---> Using cache
+2016/02/14 11:20:12.249173 local.go:604:     livesafer:  ---> 00fd58520840
+2016/02/14 11:20:12.251501 local.go:604:     livesafer: Step 3 : COPY . /app
+2016/02/14 11:20:15.353326 local.go:604:     livesafer:  ---> 7e14a587fd89
+2016/02/14 11:20:15.634467 local.go:604:     livesafer: Removing intermediate container 6c37ffba7655
+2016/02/14 11:20:15.635145 local.go:604:     livesafer: Step 4 : RUN chmod a+x .shipped/build .shipped/run .shipped/test
+2016/02/14 11:20:15.696619 local.go:604:     livesafer:  ---> Running in 0a025f9864db
+2016/02/14 11:20:16.104478 local.go:604:     livesafer:  ---> df5e82442536
+2016/02/14 11:20:16.122202 local.go:604:     livesafer: Removing intermediate container 0a025f9864db
+2016/02/14 11:20:16.123980 local.go:604:     livesafer: Step 5 : RUN .shipped/build
+2016/02/14 11:20:16.185079 local.go:604:     livesafer:  ---> Running in 4689d372e1ba
+2016/02/14 11:20:17.173304 local.go:604:     livesafer: [91mnpm[0m
+2016/02/14 11:20:17.178388 local.go:604:     livesafer: [91m [0m
+2016/02/14 11:20:17.181515 local.go:604:     livesafer: [91minfo[0m
+2016/02/14 11:20:17.182622 local.go:604:     livesafer: [91m [0m
+2016/02/14 11:20:17.184286 local.go:604:     livesafer: [91mit worked if it ends with[0m
+2016/02/14 11:20:17.185456 local.go:604:     livesafer: [91m ok
+2016/02/14 11:20:17.185492 local.go:604:     livesafer: [0m
+2016/02/14 11:20:17.191974 local.go:604:     livesafer: [91mnpm[0m[91m info using npm@3.3.6
+2016/02/14 11:20:17.192050 local.go:604:     livesafer: npm info using node@v5.0.0
+2016/02/14 11:20:17.192072 local.go:604:     livesafer: [0m
+2016/02/14 11:20:19.806852 local.go:604:     livesafer: [91mnpm[0m
+2016/02/14 11:20:19.810591 local.go:604:     livesafer: [91m [0m
+2016/02/14 11:20:19.811617 local.go:604:     livesafer: [91mERR![0m
+2016/02/14 11:20:19.815693 local.go:604:     livesafer: [91m Linux 4.0.5-boot2docker
+2016/02/14 11:20:19.815742 local.go:604:     livesafer: [0m
+2016/02/14 11:20:19.819010 local.go:604:     livesafer: [91mnpm[0m
+2016/02/14 11:20:19.820175 local.go:604:     livesafer: [91m [0m
+2016/02/14 11:20:19.822505 local.go:604:     livesafer: [91mERR![0m
+2016/02/14 11:20:19.827386 local.go:604:     livesafer: [91m argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+2016/02/14 11:20:19.827432 local.go:604:     livesafer: npm ERR! node v5.0.0
+2016/02/14 11:20:19.827450 local.go:604:     livesafer: npm ERR! npm  v3.3.6
+2016/02/14 11:20:19.827469 local.go:604:     livesafer: [0m
+2016/02/14 11:20:19.829508 local.go:604:     livesafer: [91m
+2016/02/14 11:20:19.829553 local.go:604:     livesafer: [0m
+2016/02/14 11:20:19.830559 local.go:604:     livesafer: [91mnpm[0m
+2016/02/14 11:20:19.832701 local.go:604:     livesafer: [91m [0m
+2016/02/14 11:20:19.834856 local.go:604:     livesafer: [91mERR![0m
+2016/02/14 11:20:19.837006 local.go:604:     livesafer: [91m Cannot read property 'localeCompare' of undefined
+2016/02/14 11:20:19.837055 local.go:604:     livesafer: [0m
+2016/02/14 11:20:19.840309 local.go:604:     livesafer: [91mnpm[0m
+2016/02/14 11:20:19.844945 local.go:604:     livesafer: [91m [0m[91mERR![0m
+2016/02/14 11:20:19.864141 local.go:604:     livesafer: [91m 
+2016/02/14 11:20:19.864189 local.go:604:     livesafer: npm ERR! If you need help, you may report this error at:
+2016/02/14 11:20:19.864216 local.go:604:     livesafer: npm ERR!     <https://github.com/npm/npm/issues>
+2016/02/14 11:20:19.864235 local.go:604:     livesafer: [0m
+2016/02/14 11:20:19.883187 local.go:604:     livesafer: [91m
+2016/02/14 11:20:19.883232 local.go:604:     livesafer: [0m
+2016/02/14 11:20:19.885229 local.go:604:     livesafer: [91mnpm[0m
+2016/02/14 11:20:19.886306 local.go:604:     livesafer: [91m [0m
+2016/02/14 11:20:19.888260 local.go:604:     livesafer: [91mERR![0m
+2016/02/14 11:20:19.899871 local.go:604:     livesafer: [91m Please include the following file with any support request:
+2016/02/14 11:20:19.899924 local.go:604:     livesafer: [0m
+2016/02/14 11:20:19.902368 local.go:604:     livesafer: [91mnpm[0m
+2016/02/14 11:20:19.919923 local.go:604:     livesafer: [91m [0m[91mERR![0m[91m     /app/npm-debug.log
+2016/02/14 11:20:19.920000 local.go:604:     livesafer: [0m
+2016/02/14 11:20:22.146555 local.go:604:     livesafer:  ---> 907d92c08201
+2016/02/14 11:20:22.382379 local.go:604:     livesafer: Removing intermediate container 4689d372e1ba
+2016/02/14 11:20:22.384915 local.go:604:     livesafer: Step 6 : CMD .shipped/run
+2016/02/14 11:20:22.452613 local.go:604:     livesafer:  ---> Running in 461267b40ee0
+2016/02/14 11:20:22.540886 local.go:604:     livesafer:  ---> 82a6e12be9a1
+2016/02/14 11:20:22.554743 local.go:604:     livesafer: Removing intermediate container 461267b40ee0
+2016/02/14 11:20:22.560263 local.go:604:     livesafer: Successfully built 82a6e12be9a1
+2016/02/14 11:20:22.782755 local.go:604:     livesafer: 
+2016/02/14 11:20:22.782805 local.go:604:     livesafer: Image: 82a6e12be9a1
+2016/02/14 11:20:23.061854 local.go:604: ==> livesafer: Warning: When using a remote Docker host, forwarded ports will NOT be
+2016/02/14 11:20:23.061902 local.go:604: ==> livesafer: immediately available on your machine. They will still be forwarded on
+2016/02/14 11:20:23.061921 local.go:604: ==> livesafer: the remote machine, however, so if you have a way to access the remote
+2016/02/14 11:20:23.061939 local.go:604: ==> livesafer: machine, then you should be able to access those ports there. This is
+2016/02/14 11:20:23.061958 local.go:604: ==> livesafer: not an error, it is only an informational message.
+2016/02/14 11:20:23.193279 local.go:604: ==> livesafer: Creating the container...
+2016/02/14 11:20:23.193676 local.go:604:     livesafer:   Name: livesafer
+2016/02/14 11:20:23.194014 local.go:604:     livesafer:  Image: 82a6e12be9a1
+2016/02/14 11:20:23.194353 local.go:604:     livesafer: Volume: /var/lib/docker/docker_1455445181_4952:/app
+2016/02/14 11:20:23.194858 local.go:604:     livesafer: Volume: /var/lib/docker/docker_1455445181_82293:/vagrant
+2016/02/14 11:20:23.195243 local.go:604:     livesafer:   Port: 33000:3000
+2016/02/14 11:20:23.722942 local.go:604:     livesafer:  
+2016/02/14 11:20:23.722989 local.go:604:     livesafer: Container created: 0f2b80748697c600
+2016/02/14 11:20:24.522651 local.go:604: ==> livesafer: Starting container...
+2016/02/14 11:20:25.179195 local.go:604: ==> livesafer: Checking for host entries
+2016/02/14 11:20:25.182599 local.go:604: ==> livesafer: Provisioners will not be run since container doesn't support SSH.
+2016/02/14 11:20:25.185913 local.go:604: ==> livesafer: Removing synced folders...
+TRACE 2016/02/14 11:20:27.217227 config.go:139: Using config file /Volumes/Work/sites/livesafer/LiveSafer/livesafer/.shipped/shipped.ini
+TRACE 2016/02/14 11:20:27.218031 config.go:148: Also using project config file /Volumes/Work/sites/livesafer/LiveSafer/.shipped/shipped.ini
+TRACE 2016/02/14 11:20:27.218733 config.go:158: Also using home config file /Volumes/Home/sascha/.shipped/shipped.ini
