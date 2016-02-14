@@ -64,7 +64,7 @@ var getMedianTemperature = function(data) {
     	// get the average temperature
     	averageTemperature = getMedianTemperature(last_temperatures);
 
-    	averageTemperature = 45;
+    	//averageTemperature = 45;
     	// check for heat
     	if(averageTemperature > 40) {
     		console.log('HOT HOT HOT');
@@ -96,7 +96,7 @@ var getMedianTemperature = function(data) {
     	"name": "Jackson Bonde",
 		"device": "9af8642a-65e1-4b9b-b255-515268ae38b5",
 		"temp2": parseInt(msg.readings[0].value),
-		"coordinates": "52.48202, 13.35713",
+		"geoip.location": "52.4805299,13.3543244",
 		"address": "EUREF-Campus, 10829 Berlin",
 		"phone": "+4915775983808"
 		}
@@ -104,7 +104,7 @@ var getMedianTemperature = function(data) {
     	"name": "Jackson Bonde",
 		"device": "4449af8642a-65e1-4b9b-b255-515268ae38b5",
 		"temp2": 100,
-		"coordinates": "-180, -180",
+		"geoip.location": "-180, -180",
 		"address": "EUREF-Campus, 10829 Berlin",
 		"phone": "+4915775983808"
 		}
