@@ -1,22 +1,6 @@
 zeus = require('./zeus.js');
 request = require('superagent');
 
-request
-    .post('https://api.tropo.com/1.0/sessions')
-    .send("action=create")
-    .send("token=5a4168777877505150566d51764652554f6f6161494950624d72635a4456534159496d69454d4d487649534c")
-    .send("customerTelephone=openberlin3.gen@cisco.com")
-    .send("customerName=John+Dyer")
-    .send("neighbourTelephone=openberlin3.gen@cisco.com")
-    .send("neighbourName=Jane+Dyer")
-    	if (err || !res.ok) {
-    		console.log('TROPo error: ', err);
-    	} else {
-    		console.log('Call initiated:');
-   		}
-   	});
-
-
 var getMedianTemperature = function(data) {
 	var tot=data.length;
 	var median=0;
@@ -66,7 +50,7 @@ var getMedianTemperature = function(data) {
 	    // check for freak readings
 	    // get the average temperature
     	averageTemperature = getMedianTemperature(last_temperatures);
-    	if( (msg.readings[0].value > (averageTemperature + 50)) || (msg.readings[0].value < (averageTemperature - 50)) ) {
+    	if( (msg.readings[0].value > (averageTemperature + 40)) || (msg.readings[0].value < (averageTemperature - 40)) ) {
     		// it's a freak reading, do nothing!!!
     	} else {
     		// track last 10 readings = 30 minute;
@@ -80,18 +64,25 @@ var getMedianTemperature = function(data) {
     	averageTemperature = getMedianTemperature(last_temperatures);
 
     	// check for heat
-    	if(averageTemperature > 50) {
+    	if(averageTemperature > 40) {
     		console.log('HOT HOT HOT');
     		request
-    		  .post('https://api.tropo.com/1.0/sessions?action=create')
-    		  .send("token=5a4168777877505150566d51764652554f6f6161494950624d72635a4456534159496d69454d4d487649534c")
-    		  .send("customerTelephone=14075551212")
-    		  .send("customerName=John+Dyer")
-    		  .send("neighbourTelephone=123132123123")
-    		  .send("neighbourName=Jane+Dyer")
-    		  .end(function(err, res){
-    		    // Calling the end function will send the request
-    		});
+    		    .post('https://api.tropo.com/1.0/sessions')
+    		    .send({
+    		  "customerTelephone": "openberlin3.gen@cisco.com",
+    		  "customerName": "John Dyer",
+    		  "neighbourTelephone": "openberlin3.gen@cisco.com",
+    		  "neighbourName": "Patrick Yellow",
+    		  "token": "5a4168777877505150566d51764652554f6f6161494950624d72635a4456534159496d69454d4d487649534c",
+    		  "action": "create"
+    		})
+    		    .end(function(err, res) {
+    		    	if (err || !res.ok) {
+    		    		console.log('TROPo error: ', err);
+    		    	} else {
+    		    		console.log('Call initiated:');
+    		   		}
+    		   	});
     	} else {
     		console.log('All COOL');
     	}
@@ -103,8 +94,17 @@ var getMedianTemperature = function(data) {
 		"address": "EUREF-Campus, 10829 Berlin",
 		"phone": "+4915775983808"
 		}
+		var test4 = {
+    	"name": "Jackson Bonde",
+		"device": "4449af8642a-65e1-4b9b-b255-515268ae38b5",
+		"temp2": 100,
+		"coordinates": "-180, -180",
+		"address": "EUREF-Campus, 10829 Berlin",
+		"phone": "+4915775983808"
+		}
 	    //sendDataToZeus();
 	    zeus.send(test3);
+	    zeus.send(test4);
 	    //zeus.send(30);
 	});
 
@@ -121,7 +121,7 @@ var getDeviceTemperature = function(msg) {
 	console.log('MSG');
 	console.log(msg);
 	if (typeof(msg.readings) != "undefined") {
-		return msg.readings[0].value
+		return msg.readings[0].value;
 	} else {
 		// error handling
 		return 'ERROR';
