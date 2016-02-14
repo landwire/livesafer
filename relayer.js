@@ -37,6 +37,7 @@ var getMedianTemperature = function(data) {
 
 	var last_temperatures=[20,20,20,25,25,20,20,20,20,20];
 	var averageTemperature = 20;
+	var called = false;
 	relayr.on("data", function (topic, msg) {
 		console.log('TOPIC');
 	    console.log(topic);
@@ -63,26 +64,31 @@ var getMedianTemperature = function(data) {
     	// get the average temperature
     	averageTemperature = getMedianTemperature(last_temperatures);
 
+    	//averageTemperature = 45;
     	// check for heat
     	if(averageTemperature > 40) {
     		console.log('HOT HOT HOT');
-    		request
-    		    .post('https://api.tropo.com/1.0/sessions')
-    		    .send({
-    		  "customerTelephone": "openberlin3.gen@cisco.com",
-    		  "customerName": "John Dyer",
-    		  "neighbourTelephone": "openberlin3.gen@cisco.com",
-    		  "neighbourName": "Patrick Yellow",
-    		  "token": "5a4168777877505150566d51764652554f6f6161494950624d72635a4456534159496d69454d4d487649534c",
-    		  "action": "create"
-    		})
-    		    .end(function(err, res) {
-    		    	if (err || !res.ok) {
-    		    		console.log('TROPo error: ', err);
-    		    	} else {
-    		    		console.log('Call initiated:');
-    		   		}
-    		   	});
+    		if (called === false) {
+    			called = true;
+	    		request
+	    		    .post('https://api.tropo.com/1.0/sessions')
+	    		    .send({
+	    		  "customerTelephone": "openberlin3.gen@cisco.com",
+	    		  "customerName": "John Dyer",
+	    		  "neighbourTelephone": "openberlin3.gen@cisco.com",
+	    		  "neighbourName": "Patrick Yellow",
+	    		  "token": "5a4168777877505150566d51764652554f6f6161494950624d72635a4456534159496d69454d4d487649534c",
+	    		  "action": "create"
+	    		})
+	    		    .end(function(err, res) {
+	    		    	if (err || !res.ok) {
+	    		    		console.log('TROPo error: ', err);
+	    		    	} else {
+	    		    		console.log('Call initiated:');
+	    		    		called = true;
+	    		   		}
+	    		   	});
+	    	}
     	} else {
     		console.log('All COOL');
     	}
